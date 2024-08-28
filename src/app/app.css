@@ -1,0 +1,25 @@
+app-side-nav, app-list, app-details {
+    flex: 6;
+    overflow-y: auto;
+
+
+}
+
+app-side-nav {
+    flex: 2;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #191919;
+}
+
+app-list::-webkit-scrollbar {
+    display: none;
+}
+
+app-list {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    background: black;
+}

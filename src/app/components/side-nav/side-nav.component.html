@@ -1,0 +1,61 @@
+<app-card-window ></app-card-window>
+<nav>
+    <div class="logo">
+        <mat-icon>airline_stops</mat-icon>
+        <h1>Right Direction<span>Розроблено Богданом</span></h1>
+    </div>
+
+    <ul>
+        <li data-item="tracking" (click)="selectNavItem($event, 'tracking')">
+            <mat-icon>route</mat-icon>
+            Відстеження
+        </li>
+        <li data-item="storage" (click)="selectNavItem($event, 'storage')">
+            <mat-icon>warehouse</mat-icon>
+            Склад
+        </li>
+        <li data-item="products" (click)="selectNavItem($event, 'products')">
+            <mat-icon>category</mat-icon>
+            Продукти
+        </li>
+        <li data-item="providers" (click)="selectNavItem($event, 'providers')">
+            <mat-icon>conveyor_belt</mat-icon>
+            Постачальники
+        </li>
+        <li data-item="categories" (click)="selectNavItem($event, 'categories')">
+            <mat-icon>grid_view</mat-icon>
+            Категорії
+        </li>
+    </ul>
+</nav>
+<div class="a_m">
+    <a>
+        <div class="adding" (click)="openCard('tracking')">
+            <div class="cont">
+                <mat-icon>add</mat-icon>Створити запит
+            </div>
+        </div>
+        <div class="adding_markers">
+            <div class="marker" (click)="openCard('tracking')">
+                <mat-icon>archive</mat-icon>
+<!--                <span>Замовлення</span>-->
+            </div>
+            <div class="marker" (click)="openCard('storage')">
+                <mat-icon>input</mat-icon>
+<!--                <span>На склад</span>-->
+            </div>
+            <div class="marker" (click)="openCard('products')">
+                <mat-icon>inventory</mat-icon>
+<!--                <span>Новий товар</span>-->
+            </div>
+            <div class="marker" (click)="openCard('providers')">
+                <mat-icon>place_item</mat-icon>
+<!--                <span>Постачальник</span>-->
+            </div>
+            <div class="marker" (click)="openCard('categories')">
+                <mat-icon>inbox_customize</mat-icon>
+<!--                <span>Нова категорія</span>-->
+            </div>
+        </div>
+    </a>
+</div>

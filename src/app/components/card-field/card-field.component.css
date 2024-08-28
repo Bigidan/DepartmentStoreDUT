@@ -1,0 +1,89 @@
+.fields_input {
+    display: flex;
+    flex-direction: row;
+    margin-left: 16px;
+}
+.editor {
+    display: flex;
+    flex-direction: column;
+}
+.single_field {
+    display: flex;
+    flex-direction: row;
+}
+.single_field .row {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+.single_field .row div {
+    margin-left: -1px;
+    padding-bottom: 4px;
+}
+
+input, select {
+    width: 100%;
+    outline: none;
+    font-size: 20px;
+    padding: 0 10px;
+    line-height: 38px;
+    border-radius: 7px;
+    border: 2px solid #3b3b3b;
+    background: transparent;
+    transition: 0.1s ease;
+    color: white;
+}
+select {
+    padding: 7px 10px;
+}
+
+.cont {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 25px 0;
+}
+.create {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.create mat-icon {
+    margin: 0 10px 0 16px !important;
+    color: white !important;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+
+    border-radius: 50%;
+    border: 2px solid white;
+
+    background: transparent;
+}
+.min {
+    margin: 0 0 3px 10px !important;
+}
+
+
+
+.vert_dots {
+    background-image: linear-gradient(to bottom, white 50%, transparent 0%);
+    background-repeat: repeat-y;
+    background-size: 2px 6px;
+    margin: 0 0 18px;
+    min-width: 2px;
+    width: 2px;
+}
+.hor_dots {
+    background-image: linear-gradient(to right, white 50%, transparent 0%);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: 6px 2px;
+    height: 46px;
+    width: 16px;
+}

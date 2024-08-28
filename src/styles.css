@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+app-root {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: "SKPayidar", sans-serif;
+    font-weight: bolder;
+}
+
+.mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs > .mat-mdc-tab-header .mat-mdc-tab {
+    flex-grow: 0 !important;
+}
+.mdc-tab {
+    padding: 0 !important;
+    min-width: 10px !important;
+    margin-right: 50px !important;
+}
+.mat-mdc-tab .mdc-tab__ripple::before {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+.mat-mdc-tab .mdc-tab-indicator__content--underline {
+    border-color: #4978ff !important;
+}
+.mat-expansion-panel {
+    background-color: transparent !important;
+    border-bottom: #2f2f2f 2px solid !important;
+    border-radius: 0 !important;
+}
+
+p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.mat-mdc-tab-list, .mat-mdc-tab-body-wrapper {
+    padding: 0 30px !important;
+}
+.mat-mdc-tab-label-container {
+    border-bottom-width: 2px !important;
+}

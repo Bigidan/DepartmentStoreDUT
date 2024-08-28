@@ -1,0 +1,14 @@
+<a href="javascript:void(0)">
+<div class="item-element">
+    <div class="item-element-header">
+        <h5>{{ item.name }} №{{ item.id }}</h5>
+        <h6 [ngClass]="{'on_road': item.status == 0,}" ><span class="ico"></span>{{ item.status == 0 ? "У дорозі" : "На складі" }}</h6>
+    </div>
+
+    <div class="item-element-content" [innerHTML]="formattedValue">
+    </div>
+    <div class="img">
+        <img alt="" src="assets/img/{{ selectedNavItem == 'tracking' ? 'truck' : 'box'}}.png">
+    </div>
+</div>
+</a>

@@ -1,0 +1,108 @@
+
+div.main {
+    background-color: #191919;
+    color: #a0a0a0;
+    height: 100%;
+}
+/*.header {*/
+/*    padding: 25px;*/
+/*}*/
+
+.panel,
+.panel .buttons,
+.panel .base_inf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.panel {
+    padding: 25px 30px;
+}
+
+.panel .route {
+    color: white;
+    font-size: 27px;
+}
+
+.panel .status {
+    margin-left: 25px;
+    color: #6889fd;
+
+    display: flex;
+    align-items: center;
+}
+
+.panel .status .ico {
+    margin-right: 8px;
+    position: relative;
+
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+
+    background: #6889fd;
+    border-radius: 50%;
+    transition: all .2s;
+}
+.panel .status .ico::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #6889fd;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .2s;
+}
+
+.panel .status .ico::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #191919;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .2s;
+}
+.buttons {
+    gap: 10px;
+}
+.buttons mat-icon{
+    transform: scale(0.7);
+}
+.buttons a {
+    background-color: #426bfd;
+    color: white;
+    display: flex;
+    align-items: center;
+
+    padding: 5px 10px 5px 5px;
+    border-radius: 2px;
+
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.buttons .edit {
+    background-color: #2d2c2c;
+}
+
+.on_road {
+    color: #31d64c !important;
+}
+
+.on_road .ico {
+    background: conic-gradient(#31d64c 0deg 180deg, transparent 180deg 360deg) !important;
+}
+.on_road .ico::after {
+    background-color: #31d64c !important;
+}
+.on_road .ico::before {
+    background: conic-gradient(#191919 0deg 180deg, transparent 180deg 360deg) !important;
+}

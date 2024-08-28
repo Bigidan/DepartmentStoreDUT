@@ -1,0 +1,104 @@
+<div class="main">
+    <div class="content" *ngIf="selectedItem">
+
+        <div class="header">
+            <div class="panel">
+                <div class="base_inf">
+                    <div class="route">№{{ selectedItem.id }}</div>
+                    <div class="status" [ngClass]="{'on_road': details[0].status == 0,}" ><span class="ico"></span><span>{{ details[0].status == 0 ? "У дорозі" : "На складі" }}</span></div>
+                </div>
+                <div class="buttons">
+                    <a class="edit">
+                        <mat-icon>edit</mat-icon>
+                        Редагування
+                    </a>
+                    <a class="update">
+                        <mat-icon>refresh</mat-icon>
+                        Оновити
+                    </a>
+                </div>
+            </div>
+            <div class="tabs">
+
+            <mat-tab-group>
+                <mat-tab label="Перевезення">
+                    <div class="body">
+                        <mat-accordion *ngFor="let det of details">
+                            <mat-expansion-panel>
+
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Перевезення №{{ det.trans_id }}
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Натисніть для деталей
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+
+                                <div class="details">
+                                    <p>Дата доставки: {{ det.delivering_date }}</p>
+                                </div>
+
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Про товари">
+                    <div class="body">
+                        <mat-accordion *ngFor="let it of item">
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Продукт {{ it.product_name }}
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Натисніть для деталей
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <div class="details">
+                                    <p>Кількість: {{ it.quantity }}</p>
+                                    <p>Ціна в доларах: {{ it.dollar_cost }}</p>
+                                    <p>Ціна: {{ it.uah_cost }}</p>
+                                    <p>ПДВ: {{ it.vat }}</p>
+                                    <p>Податок: {{ it.customs }}</p>
+                                    <p>Витрати на відрядження: {{ it.assignment_expenses }}</p>
+                                    <p>Дата відправки: {{ it.delivering_date }}</p>
+                                    <p>Собівартість: {{ it.prime_cost }}</p>
+                                    <p>Оптова ціна: {{ it.wholesale_price }}</p>
+                                    <p>Роздрібна ціна: {{ it.retail_price }}</p>
+
+                                    <p>Айді: №{{ it.product_id }}</p>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Постачальники">
+                    <div class="body">
+                        <mat-accordion *ngFor="let prov of provider">
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Постачальник №{{ prov.provider_id }}
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Натисніть для деталей
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <div class="details">
+                                    <p>Ім'я постачальника: {{ prov.provider_name }}</p>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </mat-tab>
+
+            </mat-tab-group>
+
+            </div>
+        </div>
+
+    </div>
+</div>

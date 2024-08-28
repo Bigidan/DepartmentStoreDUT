@@ -1,0 +1,28 @@
+<div
+        class="card-window"
+        [ngClass]="{'fullscreen': isFullscreen, 'draggable': !isFullscreen}"
+
+        (click)="$event.stopPropagation()"
+        *ngIf="isVisible">
+
+    <div class="card-header" (mousedown)="onMouseDown($event)">
+        <a class="button" (click)="toggleFullscreen()">
+            <mat-icon *ngIf="!isFullscreen">fullscreen</mat-icon>
+            <mat-icon *ngIf="isFullscreen">fullscreen_exit</mat-icon>
+        </a>
+        <span>{{content}}</span>
+        <a class="button" (click)="closeCard()"><mat-icon>close</mat-icon></a>
+    </div>
+
+    <div class="card-content">
+
+        <app-card-field [fields]="fields" [content]="content"></app-card-field>
+
+    </div>
+</div>
+
+<div
+        class="overlay"
+        *ngIf="isFullscreen && isVisible"
+        (click)="closeCard()">
+</div>

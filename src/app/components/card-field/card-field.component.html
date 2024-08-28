@@ -1,0 +1,39 @@
+Додавання запису
+<div class="fields_input">
+    <div class="vert_dots"><p></p></div>
+    <div class="fields">
+        <div class="editor">
+            <div class="single_field" *ngFor="let row of rows; let i = index">
+                <div class="hor_dots"></div>
+                <div class="row">
+                    <div *ngFor="let field of fields">
+                        <label [for]="'field-' + i + '-' + field.name">{{ field.name }}</label>
+                        <input
+                                *ngIf="field.type === 'string'"
+                                [type]="'text'"
+                                [id]="'field-' + i + '-' + field.name"
+                                [(ngModel)]="row[field.name].name"
+                        />
+                        <select
+                                *ngIf="field.type === 'dropdown'"
+                                [(ngModel)]="row[field.name].name"
+                        >
+                            <option *ngFor="let option of field.options" [value]="option">{{ option }}</option>
+                        </select>
+                    </div>
+                    <div class="min">
+                        <mat-icon (click)="removeRaw(i)">remove_circle</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="create"
+             (click)="addRaw()">
+            <mat-icon>add</mat-icon>Додати
+        </div>
+        <div class="create"
+             (click)="create()">
+            <mat-icon>save</mat-icon>Створити запит
+        </div>
+    </div>
+</div>

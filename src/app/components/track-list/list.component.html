@@ -1,0 +1,21 @@
+<div class="main">
+    <h2>{{ selectedItem.toLowerCase() }}</h2>
+    <h6>Фільтрування</h6>
+    <app-filter-group
+            [items]="filter_1"
+            groupName="filter_1"
+            (activeItemsChange)="onActiveItemsChange($event)">
+    </app-filter-group>
+    <h6 *ngIf="filter_2">Фільтрування</h6>
+    <app-filter-group
+            [items]="filter_2"
+            groupName="filter_2"
+            (activeItemsChange)="onActiveItemsChange($event)">
+    </app-filter-group>
+
+    <app-item-list
+            [items]="items"
+            (itemSelected)="onItemSelected($event)"
+            [selectedNavItem]="selectedItem"></app-item-list>
+
+</div>

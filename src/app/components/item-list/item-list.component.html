@@ -1,0 +1,8 @@
+<div class="item-list">
+    <app-item-element
+            *ngFor="let item of items"
+            [item]="item"
+            (click)="onItemSelected(item)"
+            [ngClass]="{'active': isActive(item)}"
+            [selectedNavItem]="selectedNavItem"></app-item-element>
+</div>
